@@ -2,7 +2,6 @@ package com.example.simplecardgame
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -10,81 +9,70 @@ import android.widget.TextView
 open class PlayActivity : AppCompatActivity() {
 
     lateinit var imageView : ImageView
-    lateinit var pointsView: TextView
+    lateinit var pointsView : TextView
     val deck = mutableListOf<Card>()
+
+    val clubsace = Card(R.drawable.clubsace, 1)
+    val clubstwo = Card(R.drawable.clubstwo, 2)
+    val clubsthree = Card(R.drawable.clubsthree, 3)
+    val clubsfour = Card(R.drawable.clubsfour, 4)
+    val clubsfive = Card(R.drawable.clubsfive, 5)
+    val clubssix = Card(R.drawable.clubssix, 6)
+    val clubsseven = Card(R.drawable.clubsseven, 7)
+    val clubseight = Card(R.drawable.clubseight, 8)
+    val clubsnine = Card(R.drawable.clubsnine, 9)
+    val clubsten = Card(R.drawable.clubsten, 10)
+    val clubsj = Card(R.drawable.clubsj, 11)
+    val clubsq = Card(R.drawable.clubsq, 12)
+    val clubsk = Card(R.drawable.clubsk, 13)
+
+    val diamondsace = Card(R.drawable.diamondace, 1)
+    val diamondstwo = Card(R.drawable.diamondstwo, 2)
+    val diamondsthree = Card(R.drawable.diamondsthree, 3)
+    val diamondsfour = Card(R.drawable.diamondsfour, 4)
+    val diamondsfive = Card(R.drawable.diamondsfive, 5)
+    val diamondssix = Card(R.drawable.diamondsix, 6)
+    val diamondsseven = Card(R.drawable.diamondseven, 7)
+    val diamondseight = Card(R.drawable.diamondeight, 8)
+    val diamondsnine = Card(R.drawable.diamondnine, 9)
+    val diamondsten = Card(R.drawable.diamondten, 10)
+    val diamondsj = Card(R.drawable.diamondj, 11)
+    val diamondsq = Card(R.drawable.diamondq, 12)
+    val diamondsk = Card(R.drawable.diamondk, 13)
+
+    val spadesace = Card(R.drawable.spadesace, 1)
+    val spadestwo = Card(R.drawable.spadestwo, 2)
+    val spadesthree = Card(R.drawable.spadesthree, 3)
+    val spadesfour = Card(R.drawable.spadesfour, 4)
+    val spadesfive = Card(R.drawable.spadesfive, 5)
+    val spadessix = Card(R.drawable.spadessix, 6)
+    val spadesseven = Card(R.drawable.spadesseven, 7)
+    val spadeseight = Card(R.drawable.spadeseight, 8)
+    val spadesnine = Card(R.drawable.spadesnine, 9)
+    val spadesten = Card(R.drawable.spadesten, 10)
+    val spadesj = Card(R.drawable.spadesj, 11)
+    val spadesq = Card(R.drawable.spadesq, 12)
+    val spadesk = Card(R.drawable.spadesk, 13)
+
+    val heartsace = Card(R.drawable.heartsace, 1)
+    val heartstwo = Card(R.drawable.heartstwo, 2)
+    val heartsthree = Card(R.drawable.heartsthree, 3)
+    val heartsfour = Card(R.drawable.heartsfour, 4)
+    val heartsfive = Card(R.drawable.heartsfive, 5)
+    val heartsix = Card(R.drawable.heartssix, 6)
+    val heartsseven = Card(R.drawable.heartsseven, 7)
+    val heartseight = Card(R.drawable.heartseight, 8)
+    val heartsnine = Card(R.drawable.heartsnine, 9)
+    val heartsten = Card(R.drawable.heartsthen, 10)
+    val heartsj = Card(R.drawable.heartsj, 11)
+    val heartsq = Card(R.drawable.heartsq, 12)
+    val heartsk = Card(R.drawable.heartsk, 13)
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_play)
-
-        imageView = findViewById(R.id.imageView2)
-
-        var overButton = findViewById<Button>(R.id.button)
-        var underButton = findViewById<Button>(R.id.buttonUnder)
-
-        overButton.setOnClickListener {
-            pressOver()
-        }
-        underButton.setOnClickListener {
-            pressUnder()
-        }
-
-        val clubsace = Card(R.drawable.clubsace, 1, "clubs")
-        val clubstwo = Card(R.drawable.clubstwo, 2, "clubs")
-        val clubsthree = Card(R.drawable.clubsthree, 3, "clubs")
-        val clubsfour = Card(R.drawable.clubsfour, 4, "clubs")
-        val clubsfive = Card(R.drawable.clubsfive, 5, "clubs")
-        val clubssix = Card(R.drawable.clubssix, 6, "clubs")
-        val clubsseven = Card(R.drawable.clubsseven, 7, "clubs")
-        val clubseight = Card(R.drawable.clubseight, 8, "clubs")
-        val clubsnine = Card(R.drawable.clubsnine, 9, "clubs")
-        val clubsten = Card(R.drawable.clubsten, 10, "clubs")
-        val clubsj = Card(R.drawable.clubsj, 11, "clubs")
-        val clubsq = Card(R.drawable.clubsq, 12, "clubs")
-        val clubsk = Card(R.drawable.clubsk, 13, "clubs")
-
-        val diamondsace = Card(R.drawable.diamondace, 1, "diamond")
-        val diamondstwo = Card(R.drawable.diamondstwo, 2, "diamond")
-        val diamondsthree = Card(R.drawable.diamondsthree, 3, "diamond")
-        val diamondsfour = Card(R.drawable.diamondsfour, 4, "diamond")
-        val diamondsfive = Card(R.drawable.diamondsfive, 5, "diamond")
-        val diamondssix = Card(R.drawable.diamondsix, 6, "diamond")
-        val diamondsseven = Card(R.drawable.diamondseven, 7, "diamond")
-        val diamondseight = Card(R.drawable.diamondeight, 8, "diamond")
-        val diamondsnine = Card(R.drawable.diamondnine, 9, "diamond")
-        val diamondsten = Card(R.drawable.diamondten, 10, "diamond")
-        val diamondsj = Card(R.drawable.diamondj, 11, "diamond")
-        val diamondsq = Card(R.drawable.diamondq, 12, "diamond")
-        val diamondsk = Card(R.drawable.diamondk, 13, "diamond")
-
-        val spadesace = Card(R.drawable.spadesace, 1, "spades")
-        val spadestwo = Card(R.drawable.spadestwo, 2, "spades")
-        val spadesthree = Card(R.drawable.spadesthree, 3, "spades")
-        val spadesfour = Card(R.drawable.spadesfour, 4, "spades")
-        val spadesfive = Card(R.drawable.spadesfive, 5, "spades")
-        val spadessix = Card(R.drawable.spadessix, 6, "spades")
-        val spadesseven = Card(R.drawable.spadesseven, 7, "spades")
-        val spadeseight = Card(R.drawable.spadeseight, 8, "spades")
-        val spadesnine = Card(R.drawable.spadesnine, 9, "spades")
-        val spadesten = Card(R.drawable.spadesten, 10, "spades")
-        val spadesj = Card(R.drawable.spadesj, 11, "spades")
-        val spadesq = Card(R.drawable.spadesq, 12, "spades")
-        val spadesk = Card(R.drawable.spadesk, 13, "spades")
-
-        val heartsace = Card(R.drawable.heartsace, 1, "hearts")
-        val heartstwo = Card(R.drawable.heartstwo, 2, "hearts")
-        val heartsthree = Card(R.drawable.heartsthree, 3, "hearts")
-        val heartsfour = Card(R.drawable.heartsfour, 4, "hearts")
-        val heartsfive = Card(R.drawable.heartsfive, 5, "hearts")
-        val heartsix = Card(R.drawable.heartssix, 6, "hearts")
-        val heartsseven = Card(R.drawable.heartsseven, 7, "hearts")
-        val heartseight = Card(R.drawable.heartseight, 8, "hearts")
-        val heartsnine = Card(R.drawable.heartsnine, 9, "hearts")
-        val heartsten = Card(R.drawable.heartsthen, 10, "hearts")
-        val heartsj = Card(R.drawable.heartsj, 11, "hearts")
-        val heartsq = Card(R.drawable.heartsq, 12, "hearts")
-        val heartsk = Card(R.drawable.heartsk, 13, "hearts")
 
         deck.add(clubsace)
         deck.add(clubstwo)
@@ -94,6 +82,7 @@ open class PlayActivity : AppCompatActivity() {
         deck.add(clubssix)
         deck.add(clubsseven)
         deck.add(clubseight)
+        deck.add(clubsnine)
         deck.add(clubsten)
         deck.add(clubsj)
         deck.add(clubsq)
@@ -141,25 +130,34 @@ open class PlayActivity : AppCompatActivity() {
         deck.add(heartsq)
         deck.add(heartsk)
 
-
-    }
-
-    fun pressOver() {
+        pointsView = findViewById(R.id.pointsView)
         imageView = findViewById(R.id.imageView2)
 
+        val currentCard = deck.random()
+        imageView.setImageResource(currentCard.image)
+
+        var overButton = findViewById<Button>(R.id.button)
+        var underButton = findViewById<Button>(R.id.buttonUnder)
+
+        overButton.setOnClickListener {
+
+            val newCard = deck.random()
+            imageView.setImageResource(newCard.image)
+            if (newCard.value > currentCard.value) {
+                pointsView.text = "Correct"
+            } else {
+                pointsView.text = "Incorrect"
+            }
+
+        }
+        underButton.setOnClickListener {
+
+        }
 
     }
-
-    fun pressUnder() { // points ihopkopplat med random ort,
-        pointsView = findViewById(R.id.pointsView)
-
-
-    }
-
 
 }
 
-class Card(var image : Int, var value : Int, var suite : String) {
-
+class Card(var image : Int, var value : Int) {
 
 }

@@ -25,18 +25,19 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun howToPlay() {
+    private fun howToPlay() {
         val intent = Intent(this, HowToPlayActivity::class.java)
 
         startActivity(intent)
 
     }
 
-    fun play() {
+    private fun play() {
 
         val intent = Intent(this, PlayActivity::class.java)
         startActivity(intent)
 
 
     }
+
 }

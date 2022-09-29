@@ -4,9 +4,11 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import org.w3c.dom.Text
 
 open class PlayActivity : AppCompatActivity() {
 
@@ -24,7 +26,7 @@ open class PlayActivity : AppCompatActivity() {
 
         var points = 0
         pointsView.text = points.toString()
-        pointsView.setText("Points: ${points}")
+        pointsView.setText("Points: $points")
 
         var overButton = findViewById<Button>(R.id.button)
         var underButton = findViewById<Button>(R.id.buttonUnder)
@@ -42,8 +44,20 @@ open class PlayActivity : AppCompatActivity() {
                 pointsView.setTextColor(Color.GREEN)
             } else {
                 points --
+                if (points < 0) {
+                    points = 0
+                    Log.d("!!!", "${points}")
+
+                }
+
                 pointsView.setText("Points: ${points}")
                 pointsView.setTextColor(Color.RED)
+            }
+
+            if (points < 0) {
+                points = 0
+                Log.d("!!!", "${points}")
+
             }
               currentCard = newCard
 
@@ -65,8 +79,18 @@ open class PlayActivity : AppCompatActivity() {
                 pointsView.setTextColor(Color.GREEN)
             } else {
                 points --
+                if (points < 0) {
+                    points = 0
+                    Log.d("!!!", "${points}")
+
+                }
                 pointsView.setText("Points: ${points}")
                 pointsView.setTextColor(Color.RED)
+            }
+
+            if (points < 0) {
+                points = 0
+
             }
             currentCard = newCard
 

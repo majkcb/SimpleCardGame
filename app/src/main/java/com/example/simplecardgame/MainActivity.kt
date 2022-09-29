@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         buttonPlay.setOnClickListener {
             play()
         }
-
     }
 
     private fun howToPlay() {
@@ -36,7 +35,6 @@ class MainActivity : AppCompatActivity() {
 
         val intent = Intent(this, PlayActivity::class.java)
         startActivity(intent)
-
 
     }
 

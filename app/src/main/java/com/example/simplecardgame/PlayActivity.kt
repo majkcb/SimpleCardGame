@@ -1,5 +1,6 @@
 package com.example.simplecardgame
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -23,7 +24,7 @@ open class PlayActivity : AppCompatActivity() {
 
         var points = 0
         pointsView.text = points.toString()
-        pointsView.setText("Points: ")
+        pointsView.setText("Points: ${points}")
 
         var overButton = findViewById<Button>(R.id.button)
         var underButton = findViewById<Button>(R.id.buttonUnder)
@@ -46,8 +47,10 @@ open class PlayActivity : AppCompatActivity() {
             }
               currentCard = newCard
 
-            if (points == 2) {
-                pointsView.text = "Congrats!"
+            if (points == 5) {
+                val intent = Intent(this, WinActivity::class.java)
+
+                startActivity(intent)
             }
 
         }
@@ -67,9 +70,10 @@ open class PlayActivity : AppCompatActivity() {
             }
             currentCard = newCard
 
-            if (points == 2) {
-                pointsView.text ="Congrats!"
-                pointsView.setTextColor(Color.YELLOW)
+            if (points == 5) {
+                val intent = Intent(this, WinActivity::class.java)
+
+                startActivity(intent)
             }
 
         }

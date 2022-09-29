@@ -23,6 +23,7 @@
         android:layout_marginTop="32dp"
         android:text="Over or Under?"
         android:textAlignment="center"
+        android:textColor="#070707"
         android:textIsSelectable="false"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"

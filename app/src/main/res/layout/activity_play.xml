@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
+    android:backgroundTint="#F8A90B"
     tools:context=".PlayActivity">
 
     <ImageView
@@ -21,8 +23,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:backgroundTint="#171717"
+        android:backgroundTint="#F8F8F8"
         android:text="Over"
+        android:textColor="#0E0E0E"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.3"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,6 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:text="Points"
+        android:textColor="#030403"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"

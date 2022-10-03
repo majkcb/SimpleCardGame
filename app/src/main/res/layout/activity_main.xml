@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F4EFEF"
+    android:backgroundTint="#FF9800"
     tools:context=".MainActivity">
 
     <ImageView
@@ -11,6 +13,8 @@
         android:layout_width="397dp"
         android:layout_height="453dp"
         android:layout_marginTop="24dp"
+        android:background="#FF9800"
+        android:backgroundTint="#FF9800"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

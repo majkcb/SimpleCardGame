@@ -8,9 +8,18 @@ class Deck {
     }
 
     fun getCard() : Card {
+
+        if (deckOfCards.isEmpty() ) { //använder alla kort innan de kan användas igen
+            initializeDeck()
+        }
+
         val random = (0 until deckOfCards.size).random()
         return deckOfCards[random]
     }
+
+  //  fun getUsedCard() : Card {
+
+    //}
 
     fun initializeDeck() {
 

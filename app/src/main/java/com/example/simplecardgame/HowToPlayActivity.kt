@@ -18,7 +18,7 @@ class HowToPlayActivity : AppCompatActivity() {
 
         howToPlayView = findViewById(R.id.howToPlayView)
 
-        howToPlayView.text = "Beat the game by guessing if the next card is going to be over or under the card on display. If guessed correctly, you'll gain a point. If guessed incorrectly, you'll lose a point. Collect five points in total to beat the game. Keep in mind that ACE has the lowest value."
+        howToPlayView.text = "Beat the game by guessing if the next card is going to be over or under the card on display. If guessed correctly, you'll gain a point. If guessed incorrectly, you'll lose a point. Collect five points in total to beat the game. Keep in mind that the 'ace' is of the lowest value."
 
         val backButton = findViewById<Button>(R.id.backButton)
 

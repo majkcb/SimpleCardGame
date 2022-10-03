@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4EFEF"
-    android:backgroundTint="#FF9800"
+    android:background="#498E1E"
+    android:backgroundTint="#498E1E"
     tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="397dp"
-        android:layout_height="453dp"
-        android:layout_marginTop="24dp"
-        android:background="#FF9800"
-        android:backgroundTint="#FF9800"
+        android:layout_width="331dp"
+        android:layout_height="488dp"
+        android:layout_marginTop="60dp"
+        android:background="#498E1E"
+        android:backgroundTint="#498E1E"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,25 +22,25 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="276dp"
-        android:layout_height="67dp"
-        android:layout_marginTop="32dp"
-        android:text="Over or Under?"
+        android:layout_width="331dp"
+        android:layout_height="145dp"
+        android:layout_marginTop="4dp"
+        android:background="#2E2A23"
         android:textAlignment="center"
-        android:textColor="#070707"
+        android:textColor="#F4EFEF"
         android:textIsSelectable="false"
-        android:textSize="34sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <Button
         android:id="@+id/playButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:backgroundTint="#F8A90B"
+        android:layout_width="109dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="-20dp"
+        android:backgroundTint="#2E2A23"
         android:text="PLAY"
         android:textColor="#F4EEEE"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,11 +48,24 @@
 
     <Button
         android:id="@+id/howtoplay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="68dp"
-        android:backgroundTint="#5A1485"
+        android:layout_width="109dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="-20dp"
+        android:layout_marginEnd="64dp"
+        android:backgroundTint="#A62828"
         android:text="HOW TO PLAY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/overOrUnder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Over or Under?"
+        android:textColor="#F3F1F1"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

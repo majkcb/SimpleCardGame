@@ -35,7 +35,6 @@ open class PlayActivity : AppCompatActivity() {
         var overButton = findViewById<Button>(R.id.button)
         var underButton = findViewById<Button>(R.id.buttonUnder)
 
-
         var currentCard = deckOfCards.getCard()
         imageView.setImageResource(currentCard.image)
 
@@ -49,13 +48,12 @@ open class PlayActivity : AppCompatActivity() {
             if (currentCard.value < newCard.value) {
                 points ++
                 pointsView.setText("Points: ${points}")
-                pointsView.setTextColor(Color.GREEN)
+                pointsView.setTextColor(Color.YELLOW)
             } else {
                 points --
                 if (points < 0) {
                     points = 0
                     Log.d("!!!", "${points}")
-
                 }
 
                 pointsView.setText("Points: ${points}")
@@ -64,7 +62,6 @@ open class PlayActivity : AppCompatActivity() {
 
             if (points < 0) {
                 points = 0
-
 
             }
               currentCard = newCard
@@ -87,7 +84,7 @@ open class PlayActivity : AppCompatActivity() {
             if (currentCard.value > newCard.value) {
                 points ++
                 pointsView.setText("Points: ${points}")
-                pointsView.setTextColor(Color.GREEN)
+                pointsView.setTextColor(Color.YELLOW)
             } else {
                 points --
                 if (points < 0) {
@@ -122,4 +119,8 @@ inte annat än kunde stämma men det funkade ändå inte.
 tillslut började jag logga vart det kunde gått fel
 och kom fram till att jag satt if-satsen för långt ner.
 den hann alltså gå minus innan.
+
+ett annat problem var att jag enbart lyckades randomiza korten, men inte jämföra dess värde
+då jag inte satt något värde på dom. det var förens vi hade en lektion som gick igenom att det är
+smidigt att göra en klass där man enkelt kan ge dom ett värde från början.
  */

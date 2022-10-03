@@ -10,7 +10,7 @@ import android.widget.TextView
 
 class WinActivity : AppCompatActivity() {
 
-    lateinit var winView : TextView
+
     lateinit var menuButton : Button
     lateinit var playAgainButton : Button
 
@@ -19,11 +19,9 @@ class WinActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_win)
 
-        winView = findViewById(R.id.winningView)
 
        // val rotate = AnimationUtils.loadAnimation(this, R.anim.rotate)
         val blinkAnim = AnimationUtils.loadAnimation(this, R.anim.blink_anim)
-        winView.startAnimation(blinkAnim)
       //  winView.startAnimation(rotate)
 
 

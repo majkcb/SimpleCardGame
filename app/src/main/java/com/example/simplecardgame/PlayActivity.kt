@@ -83,7 +83,7 @@ open class PlayActivity : AppCompatActivity() {
     }
 
     private fun mainPoints(): Int {
-        var points = 0
+        val points = 0
         pointsView.text = "Points: $points"
         return points
     }

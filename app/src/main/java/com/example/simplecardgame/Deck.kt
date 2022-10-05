@@ -17,10 +17,6 @@ class Deck {
         return deckOfCards[random]
     }
 
-  //  fun getUsedCard() : Card {
-
-    //}
-
     fun initializeDeck() {
 
         val clubsace = Card(R.drawable.clubsace, 1)

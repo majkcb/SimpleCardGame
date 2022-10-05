@@ -106,6 +106,13 @@ open class PlayActivity : AppCompatActivity() {
             }
             pointsView.text = "Points: $points1"
             pointsView.setTextColor(Color.RED)
+
+            if (currentCard.value == newCard.value) {
+                points1
+            }
+
+            pointsView.text = "Points: $points1"
+            pointsView.setTextColor(Color.BLACK)
         }
         return points1
     }
@@ -137,6 +144,13 @@ open class PlayActivity : AppCompatActivity() {
 
             pointsView.text = "Points: $points1"
             pointsView.setTextColor(Color.RED)
+
+            if (currentCard.value == newCard.value) {
+                points1
+            }
+
+            pointsView.text = "Points: $points1"
+            pointsView.setTextColor(Color.BLACK)
         }
         return points1
     }

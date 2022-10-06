@@ -41,10 +41,6 @@ open class PlayActivity : AppCompatActivity() {
             imageView.setImageResource(newCard.image)
             points = pointsValueOverButton(currentCard, newCard, points)
 
-            if (points < 0) {
-                points = 0
-
-            }
               currentCard = newCard
 
             winPoints(points)
@@ -59,10 +55,6 @@ open class PlayActivity : AppCompatActivity() {
             imageView.setImageResource(newCard.image)
             points = pointsValueUnderButton(currentCard, newCard, points)
 
-            if (points < 0) {
-                points = 0
-
-            }
             currentCard = newCard
 
             winPoints(points)
@@ -86,6 +78,7 @@ open class PlayActivity : AppCompatActivity() {
         val points = 0
         pointsView.text = "Points: $points"
         return points
+
     }
 
     private fun pointsValueUnderButton(
@@ -94,6 +87,7 @@ open class PlayActivity : AppCompatActivity() {
         points: Int
     ): Int {
         var points1 = points
+
         if (currentCard.value > newCard.value) {
             points1++
             pointsView.text = "Points: $points1"
@@ -117,6 +111,7 @@ open class PlayActivity : AppCompatActivity() {
         return points1
     }
 
+
     private fun winPoints(points: Int) {
         if (points == 5) {
             val intent = Intent(this, WinActivity::class.java)
@@ -135,13 +130,16 @@ open class PlayActivity : AppCompatActivity() {
             points1++
             pointsView.text = "Points: $points1"
             pointsView.setTextColor(Color.YELLOW)
+        }
+        if (points1 < 0) {
+            points1 = 0
+
         } else {
             points1--
             if (points1 < 0) {
                 points1 = 0
-                Log.d("!!!", "$points1")
-            }
 
+            }
             pointsView.text = "Points: $points1"
             pointsView.setTextColor(Color.RED)
 
@@ -162,14 +160,4 @@ open class PlayActivity : AppCompatActivity() {
 
 }
 
-/* ett problem jag satt med länge var att poängen
-inte skulle kunna gå under 0. tyckte att if-satsen
-inte annat än kunde stämma men det funkade ändå inte.
-tillslut började jag logga vart det kunde gått fel
-och kom fram till att jag satt if-satsen för långt ner.
-den hann alltså gå minus innan.
 
-ett annat problem var att jag enbart lyckades randomiza korten, men inte jämföra dess värde
-då jag inte satt något värde på dom. det var förens vi hade en lektion som gick igenom att det är
-smidigt att göra en klass där man enkelt kan ge dom ett värde från början.
- */

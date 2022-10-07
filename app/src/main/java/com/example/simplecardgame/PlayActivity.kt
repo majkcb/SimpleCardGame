@@ -41,7 +41,7 @@ open class PlayActivity : AppCompatActivity() {
             imageView.setImageResource(newCard.image)
             points = pointsValueOverButton(currentCard, newCard, points)
 
-              currentCard = newCard
+            currentCard = newCard
 
             winPoints(points)
 
@@ -94,23 +94,21 @@ open class PlayActivity : AppCompatActivity() {
             pointsView.setTextColor(Color.YELLOW)
         } else {
             points1--
+            pointsView.setTextColor(Color.RED)
             if (points1 < 0) {
                 points1 = 0
-
             }
             pointsView.text = "Points: $points1"
-            pointsView.setTextColor(Color.RED)
 
             if (currentCard.value == newCard.value) {
                 points1
+                pointsView.text = "Points: $points1"
+                pointsView.setTextColor(Color.BLACK)
             }
 
-            pointsView.text = "Points: $points1"
-            pointsView.setTextColor(Color.BLACK)
         }
         return points1
     }
-
 
     private fun winPoints(points: Int) {
         if (points == 5) {
@@ -130,25 +128,19 @@ open class PlayActivity : AppCompatActivity() {
             points1++
             pointsView.text = "Points: $points1"
             pointsView.setTextColor(Color.YELLOW)
-        }
-        if (points1 < 0) {
-            points1 = 0
-
         } else {
             points1--
+            pointsView.setTextColor(Color.RED)
             if (points1 < 0) {
                 points1 = 0
-
             }
             pointsView.text = "Points: $points1"
-            pointsView.setTextColor(Color.RED)
 
             if (currentCard.value == newCard.value) {
                 points1
+                pointsView.text = "Points: $points1"
+                pointsView.setTextColor(Color.BLACK)
             }
-
-            pointsView.text = "Points: $points1"
-            pointsView.setTextColor(Color.BLACK)
         }
         return points1
     }
